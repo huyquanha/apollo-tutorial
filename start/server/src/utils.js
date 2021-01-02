@@ -2,7 +2,7 @@ const SQL = require('sequelize');
 
 module.exports.paginateResults = ({
   after: cursor,
-  pageSize = 20,
+  pageSize,
   results,
   // can pass in a function to calculate an item's cursor
   getCursor = () => null,

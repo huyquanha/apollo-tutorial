@@ -17,12 +17,15 @@ interface LoginFormState {
   email: string;
 }
 
-export default class LoginForm extends Component<LoginFormProps, LoginFormState> {
+export default class LoginForm extends Component<
+  LoginFormProps,
+  LoginFormState
+> {
   state = { email: '' };
 
   onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const email = (event.target as HTMLInputElement).value;
-    this.setState(s => ({ email }));
+    this.setState((s) => ({ email }));
   };
 
   onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
@@ -42,13 +45,13 @@ export default class LoginForm extends Component<LoginFormProps, LoginFormState>
         <StyledForm onSubmit={(e) => this.onSubmit(e)}>
           <StyledInput
             required
-            type="email"
-            name="email"
-            placeholder="Email"
-            data-testid="login-input"
+            type='email'
+            name='email'
+            placeholder='Email'
+            data-testid='login-input'
             onChange={(e) => this.onChange(e)}
           />
-          <Button type="submit">Log in</Button>
+          <Button type='submit'>Log in</Button>
         </StyledForm>
       </Container>
     );
